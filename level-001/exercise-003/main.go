@@ -7,6 +7,6 @@ var y = "James Bond"
 var z = true
 
 func main() {
-	s := fmt.Sprintf("%d \"%s\" %t", x, y, z)
+	s := fmt.Sprintf("%v \"%v\" %v", x, y, z)
 	fmt.Println(s)
 }
