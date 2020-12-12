@@ -1,0 +1,42 @@
+package main
+
+import "fmt"
+
+type person struct {
+	firstName               string
+	lastName                string
+	favoriteIceCreamFlavors []string
+}
+
+func main() {
+	p1 := person{
+		firstName: "Ray",
+		lastName:  "Britten",
+		favoriteIceCreamFlavors: []string{
+			"Gelato",
+			"Mochi Ice Cream",
+		},
+	}
+
+	p2 := person{
+		firstName: "Corbett",
+		lastName:  "Winley",
+		favoriteIceCreamFlavors: []string{
+			"Sorbet",
+		},
+	}
+
+	persons := map[string]person{
+		p1.lastName: p1,
+		p2.lastName: p2,
+	}
+
+	for k, v := range persons {
+		fmt.Printf(">>> %v <<<\n", k)
+		fmt.Printf(">>> %v %v <<<\n", v.firstName, v.lastName)
+		fmt.Printf("Favourite Ice Cream Flavors:\n")
+		for _, flavour := range v.favoriteIceCreamFlavors {
+			fmt.Printf("\t- %v\n", flavour)
+		}
+	}
+}
